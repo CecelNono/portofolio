@@ -1,0 +1,746 @@
+:root{
+    --peach : #ff6940e4;
+    --dark : #2f3a51;
+    --cyan : #eaffff;
+    --brown : #3e2924;
+    --green : #23d36b;
+    --purple : #A855F7;
+    --white: #ffffffff;
+    --periwinkle: #cfbfffff;
+    --soft-periwinkle: #a080ffff;
+    --majorelle-blue: #7040ffff;
+    --blue: #4000ffff;
+    --medium-blue: #3000bfff;
+    --navy: #4a657e;
+    --dark-amethyst: #100040ff;
+    --black: #000000ff;
+        
+    
+}
+*{
+    box-sizing: border-box;
+}
+html, body{
+    padding : 0;
+    margin : 0;
+    font-family : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+.name{
+    font-weight: bold;
+    font-size: 35px;
+    margin: 0px 10px;
+}
+#nav-container{
+    background-color: white;
+    position: sticky;
+    top : 0px;
+    z-index: 9999;
+}
+.nav-flex{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 65px;
+    
+}
+.nav-flex label, #humberger{
+    display: none;
+}
+nav ul{
+    list-style-type: none;
+    display : flex;
+    padding: 0px 20px;
+    margin : 10px;
+}
+nav ul li a{
+    display : block;
+    color : #7040ff;
+    padding: 0px 10px;
+    text-decoration:none;
+    text-transform:uppercase;
+    line-height: 65px;
+}
+nav ul li a:hover{
+    background-color: var(--peach);
+    transition: all 0.3s;
+}
+.nav-brand h2{
+    margin : 18px 0 0 10px;
+    color : #7040ff;
+}
+@media screen and (max-width:768px){
+    #nav-container .nav-flex label{
+        display : inline-block;
+        color : #7040ff;
+        font-style : normal;
+        font-size: 32px;
+        padding : 8px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+    }
+    #nav-container .nav-flex{
+        width: 100%;
+    }
+    .nav-flex{
+        border-radius: 50px;
+     
+    }
+    
+    nav ul{
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top:60px;
+        left: 0px;
+        border-radius: 50px;
+    }
+    nav ul li a{
+        display: block;
+        color : whitesmoke;
+        background-color: #7040ffe8;
+        padding: 0px 30px;
+        height: auto;        
+    }
+    .nav-brand h2{
+        position: absolute;
+        right: 20px;
+    }
+    #nav-container nav{
+        display:none;
+    }
+    #nav-container .nav-flex input:checked ~label {
+        transform: rotate(90deg) scale(1.2);
+    }
+    #nav-container .nav-flex input:checked ~ nav{
+        display: flex;
+        
+    }
+    /* 2. Styling awal untuk label (icon hamburger) */
+label[for="humberger"] {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 28px; /* Sesuaikan ukuran */
+  transition: transform 0.3s ease; /* Animasi putar */
+  user-select: none;
+}
+
+/* 3. Efek saat diklik (Checkbox :checked) */
+.nav-flex:has(#humberger:checked) label[for="humberger"] {
+  transform: rotate(90deg); /* Biar ada kesan berubah */
+  color: transparent; /* Sembunyikan simbol asli (&#9776;) */
+  position: relative;
+}
+
+/* 4. Munculkan simbol X sebagai penggantinya */
+.nav-flex:has(#humberger:checked) label[for="humberger"]::before {
+  content: "✕"; /* Simbol X */
+  color: #7040ff; /* Sesuaikan dengan warna font kamu */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+    
+    
+}
+.container{
+    align-items: center;
+    justify-content: center;
+}
+.photo img{
+    width: 100%;
+    height: auto;
+    align-items : center;
+}
+.container button{
+    padding: 15px 25px;
+    margin : 20px 20px;
+    background-color : #8540ff;
+    color : white;
+    font-weight: bold;
+    border-radius: 50px;
+    text-decoration : none;
+    border : none;
+    font-family: 'Segoe UI', sans-serif;
+    cursor: pointer;
+    text-align: center;
+    
+    /* Efek Bayangan Lembut */
+    box-shadow: 0 4px 15px rgba(110, 142, 251, 0.4);
+    
+    /* Animasi saat transisi */
+    transition: all 0.3s ease;
+}
+.container button:hover{
+    transform : translateY(-7px);
+    background-color : #883ebb;
+}
+.about{
+    background-color : white;
+    color : white;
+    box-shadow: 0 4px 15px;
+    padding : 10px
+}
+.about h4{
+    padding : 0 15px;
+    margin-top : 50px;
+    color : #8540ff;
+    font-family : Times New Roman, Arial;
+}
+.about h2{
+    margin : 15px;
+    color:black;
+    font-weight: bold;
+    font-family: 'Segoi UI', Tahoma, sans-serif;
+    font-size: 35px;
+    
+    
+    
+}
+.about p{
+    margin : 15px;
+    color:  var(--dark);
+    text-align : justify;
+    width : auto;
+    
+}
+.about p mark{
+    background-color : #ff152a;
+}
+.contact h2{
+    margin : 15px;
+    color:black;
+    font-weight: bold;
+    font-family: 'Segoi UI', Tahoma, sans-serif;
+    font-size: 35px;
+}
+.contact p{
+    margin : 15px;
+    color:  var(--dark);
+    text-align : justify;
+    width : auto;
+    
+}
+.fab{
+    font-size: 30px;
+    display: flex;
+    cursor: pointer;
+    color: var(--purple);
+    transition: 0.25s;
+    margin-bottom: 120px;
+    margin-top: 80px;
+    
+}
+.contact{
+    text-align: center;
+    align-items: center;
+}
+.contact a{
+    justify-content: space-between;
+    padding: 18px 10px;
+    text-align: center;
+    align-items: center;
+    
+}
+.fab:hover{
+    transform: translateY(-15px) scale(1.2);
+    color: var(--peach);
+}
+#project{
+    padding: 80px 0px;
+}
+#project h5{
+    text-align: center;
+    font-weight: bold;
+    color: var(--purple);
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+#project h2{
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    margin-top: 0px;
+    
+}
+#project p{
+    text-align: center;
+    font-weight: bold;
+    color: var(--dark);
+    padding: 0 20px;
+    
+}
+.containers{
+    align-items: center;
+    text-align: center;
+    margin: 8px;
+}
+.containers img{
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(110, 142, 251, 0.4);
+    margin: 20px;
+    
+}
+.project{
+    background-color: whitesmoke;
+    margin:  auto;
+    padding: 5px;
+
+}
+.pendidikan {
+    background-color: var(--navy);
+    padding: 80px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+}
+.pendidikan h5{
+    color: var(--purple);
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+.pendidikan h2{
+    font-weight: bolder;
+    font-size: 30px;
+    margin-top: 0px;
+    color: white;
+}
+.pendidikan p{
+    color: #688fb3;
+    font-weight: bold;
+    
+}
+.pendidikan img{
+    width: 200px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease, transform 0.4s ease, opacity 0.4s ease;
+    opacity: 0,6;
+    z-index: 3;
+}
+.pendidikan img:hover{
+    filter: grayscale(0);
+    transform: scale(1.1);
+    opacity: 1;
+}
+.nav-flex{
+   z-index: 100;
+}
+#blog{
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    
+}
+.blog h5{
+    margin-bottom: 0px;
+    color: var(--purple);
+    font-weight: bold;
+    font-size: 15px;
+}
+.blog h2{
+    margin-top: 0px;
+    color: black;
+    font-weight: bolder;
+    font-size: 30px;
+}
+.blog p{
+    font-weight: bold;
+    color: #acacacd6;
+    margin-bottom: 80px;
+}
+.containerblog {
+    border-radius: 10px;
+    padding: 0;
+    box-shadow: 0 8px 20px rgba(110, 142, 251, 0.4);
+    margin: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.containerblog a{
+    color: var(--purple);
+    text-decoration: none;
+}
+.containerblog img{
+    width: 100%;
+    display: block;
+    margin: 0;
+    border-radius: 10px 10px 0 0;
+}
+.containerblog p{
+    padding: 10px;
+    font-weight: bold;
+    color: #595977bb;
+}
+.containerblog button{
+    background-color: var(--purple);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font: 'Sogoe UI', Tahoma, sans-serif;
+    color: white;
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+    padding: 15px 25px;
+    
+}
+.containerblog button:hover{
+    background-color: var(--peach);
+}
+#contact{
+    background-color: whitesmoke;
+    text-align: center;
+    align-items: center;
+    padding-top: 80px;
+    margin-bottom: 0;
+}
+#contact h5{
+    color: var(--purple);
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+#contact h2{
+    color: black;
+    margin-top: 0;
+    font-size: 36px;
+    font-weight: bold;
+}
+.last{
+    background-color: #112b44; 
+    padding: 80px 20px;
+    margin-bottom: 0;        
+}
+.last h1{
+    text-align: left;
+    color: white;
+    font-family: 'Sogoe Ui', Tahoma, sans-serif;
+    font-size: 35px;
+    margin-right: 10px;
+    font-weight: bold;
+    margin-left: 5px;
+    padding-top: 10px;
+    
+}
+.last h2{
+    text-align: left;
+    font-size: 2px;
+   
+}
+.last h4{
+    text-align: left;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.last ul{
+    text-align: left;
+    text-decoration: none;
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+    
+    
+}
+.last ul li a{
+    color: #ccd6f5;
+    text-decoration: none;
+}
+.footer{
+    background-color: #112b44;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    
+    
+   
+} 
+.footer a i{
+     color: white;
+     
+}
+.footer a{
+    text-decoration: none;
+    padding-bottom: 0;
+    margin: 0;
+    justify-content: space-between;
+}
+.footer p{
+    padding-top: 0;
+    margin: 0;
+    color: white;
+}
+.footer p a{
+    text-decoration: none;
+    color : var(--purple);
+}
+@media screen and (min-width: 768px) {
+    .panel {
+        display: block; 
+         color: white;
+       padding: 80px 10%;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        height: auto; 
+        top: 0;
+        position: sticky;
+        box-sizing: border-box;
+        overflow: visible;
+        padding-bottom: 15vh;
+    
+    }
+    .beranda{
+        background-color: white;
+    ,}
+    #project{
+        background-color: white;
+        z-index: 2;
+    }
+    .beranda {
+        position: relative; 
+        min-height: 100vh;
+        z-index: 1;
+    }
+    #pendidikan{
+    position: relative;
+        z-index: 3;
+    }
+    .nav-flex{
+        z-index: 100;
+    }
+    .blogg{
+        z-index: 4;
+    }
+    .contact1{
+        z-index: 5;
+    }
+    .footer{
+        z-index: 6;
+    }
+
+    /* Section kedua (Project) yang akan "menimpa" ke atas */
+    .project {
+        position: sticky;
+        top: 0;
+        min-height: 100vh;
+        z-index: 2;
+        /* Tambahkan bayangan agar terlihat jelas saat menimpa */
+        box-shadow: 0 -20px 30px rgba(0,0,0,0.1);
+    }
+    .panel{
+    padding-top: 100px;  /* Jarak dari atas */
+    padding-bottom: 50px; /* Jarak sebelum panel berikutnya menimpa
+    }
+    #pendidikan {
+    background-color: var(--navy);
+    padding: 80px;
+    text-align: center;
+    align-items: center;
+    
+    }
+    .pendidikan h5{
+    color: var(--purple);
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 0px;
+    }
+    .pendidikan h2{
+    font-weight: bolder;
+    font-size: 30px;
+    margin-top: 0px;
+    color: white;
+    }
+    .pendidikan p{
+    color: #688fb3;
+    font-weight: bold;
+    
+    }
+    .pendidikan a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .pendidikan img{
+    width: 200px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease, transform 0.4s ease, opacity 0.4s ease;
+    opacity: 0,6;
+    z-index: 3;
+    
+    
+    }
+    .pendidikan img:hover{
+    filter: grayscale(0);
+    transform: scale(1.1);
+    opacity: 1;
+    
+    }
+    #blog{
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-top:80px;
+    
+    
+    }
+    .blog h5{
+    margin-bottom: 0px;
+    color: var(--purple);
+    font-weight: bold;
+    font-size: 15px;
+    }
+    .blog h2{
+    margin-top: 0px;
+    color: black;
+    font-weight: bolder;
+    font-size: 30px;
+    }
+    .blog p{
+    font-weight: bold;
+    color: #acacacd6;
+    margin-bottom: 80px;
+    }
+    .containerblog {
+    border-radius: 10px;
+    padding: 0;
+    box-shadow: 0 8px 20px rgba(110, 142, 251, 0.4);
+    margin: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    }
+    .containerblog a{
+    color: var(--purple);
+    text-decoration: none;
+    }
+    .containerblog img{
+    width: 100%;
+    display: block;
+    margin: 0;
+    border-radius: 10px 10px 0 0;
+    }
+    .containerblog p{
+    padding: 10px;
+    font-weight: bold;
+    color: #595977bb;
+    }
+    .containerblog button{
+    background-color: var(--purple);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font: 'Sogoe UI', Tahoma,     sans-serif;
+    color: white;
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+    padding: 15px 25px;
+    
+    }
+    .containerblog button:hover{
+    background-color: var(--peach);
+    }
+    #contact{
+    background-color: whitesmoke;
+    text-align: center;
+    align-items: center;
+    padding: 0;    
+    }
+    #contact h5{
+    color: var(--purple);
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: bold;
+    }
+    #contact h2{
+    color: black;
+    margin-top: 0;
+    font-size: 36px;
+    font-weight: bold;
+    }
+    .last{
+        padding: 0;
+        width: 100%;
+    }
+    .last h1{
+    text-align: left;
+    color: white;
+    font-family: 'Sogoe Ui', Tahoma, sans-serif;
+    font-size: 70px;
+    margin-right: 150px;
+    font-weight: bolder;
+    margin-left: 50px;
+    
+    }
+    .last h2{
+    text-align: left;
+    font-size: 2px;
+   
+}
+.last h4{
+    text-align: left;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+.last ul{
+    text-align: left;
+    text-decoration: none;
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+    
+    
+}
+.last ul li a{
+    color: #ccd6f5;
+    text-decoration: none;
+}
+.footer{
+    background-color: #112b44;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    
+    
+   
+} 
+.footer a i{
+     color: white;
+     
+}
+.footer a{
+    text-decoration: none;
+    padding-bottom: 0;
+    margin: 0;
+    justify-content: space-between;
+}
+.footer p{
+    padding-top: 0;
+    margin: 0;
+    color: white;
+}
+.footer p a{
+    text-decoration: none;
+    color : var(--purple);
+}
+}
+ 
