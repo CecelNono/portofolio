@@ -23,7 +23,7 @@
 html, body{
     padding : 0;
     margin : 0;
-    font-family : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family : 'Segoe UI', Tahoma, Geneva, Verdana, Poppins;
     
 }
 .name{
@@ -36,6 +36,8 @@ html, body{
     position: sticky;
     top : 0px;
     z-index: 9999;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+
 }
 .nav-flex{
     display:flex;
@@ -57,14 +59,16 @@ nav ul{
 nav ul li a{
     display : block;
     color : #7040ff;
-    padding: 0px 10px;
+    padding: 12px 10px;
+    font-size: 20px;
     text-decoration:none;
     text-transform:uppercase;
-    line-height: 65px;
+    transition: all 0.3s ease;
+    
 }
 nav ul li a:hover{
     background-color: var(--peach);
-    transition: all 0.3s;
+    
 }
 .nav-brand h2{
     margin : 18px 0 0 10px;
@@ -80,6 +84,9 @@ nav ul li a:hover{
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
     }
+    html {
+    scroll-behavior: smooth;
+    }
     #nav-container .nav-flex{
         width: 100%;
     }
@@ -92,6 +99,7 @@ nav ul li a:hover{
         flex-direction: column;
         width: 100%;
         position: absolute;
+        border-radius: 50px;
         top:60px;
         left: 0px;
         border-radius: 50px;
@@ -101,11 +109,23 @@ nav ul li a:hover{
         color : whitesmoke;
         background-color: #7040ffe8;
         padding: 0px 30px;
-        height: auto;        
+        height: auto;
+        line-height: 40px;
+        font-size: 15px;
+        padding: 10px 20px;  
+        
+    }
+    .nav-border-top{
+        border-radius: 10px 10px 0 0;
+    }
+    .nav-border-bottom{
+        border-radius: 0 0 10px 10px;
     }
     .nav-brand h2{
         position: absolute;
         right: 20px;
+        font: Poppins;
+        font-weight: bold;
     }
     #nav-container nav{
         display:none;
@@ -138,8 +158,9 @@ label[for="humberger"] {
   content: "✕"; /* Simbol X */
   color: #7040ff; /* Sesuaikan dengan warna font kamu */
   position: absolute;
-  left: 0;
+  left: -2;
   top: 0;
+  
 }
     
     
@@ -147,11 +168,13 @@ label[for="humberger"] {
 .container{
     align-items: center;
     justify-content: center;
+    padding: 0 15px;
 }
 .photo img{
     width: 100%;
     height: auto;
     align-items : center;
+    padding: 0 20px;
 }
 .container button{
     padding: 15px 25px;
@@ -159,10 +182,10 @@ label[for="humberger"] {
     background-color : #8540ff;
     color : white;
     font-weight: bold;
-    border-radius: 50px;
+    border-radius: 8px;
     text-decoration : none;
     border : none;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Poppins;
     cursor: pointer;
     text-align: center;
     
@@ -174,7 +197,7 @@ label[for="humberger"] {
 }
 .container button:hover{
     transform : translateY(-7px);
-    background-color : #883ebb;
+    background-color : var(--peach);
 }
 .about{
     background-color : white;
@@ -184,15 +207,16 @@ label[for="humberger"] {
 }
 .about h4{
     padding : 0 15px;
-    margin-top : 50px;
+    margin-bottom: 0px;
     color : #8540ff;
     font-family : Times New Roman, Arial;
 }
 .about h2{
-    margin : 15px;
+    margin-top: 0;
+    padding-left: 15px;
     color:black;
     font-weight: bold;
-    font-family: 'Segoi UI', Tahoma, sans-serif;
+    font-family: 'Times New Roman, Arial;
     font-size: 35px;
     
     
@@ -200,19 +224,22 @@ label[for="humberger"] {
 }
 .about p{
     margin : 15px;
+    line-height: 0.6;
     color:  var(--dark);
     text-align : justify;
+    font-family: 'Segoe UI', Poppins;
     width : auto;
+    line-height: 1.6;
     
 }
 .about p mark{
-    background-color : #ff152a;
+    background-color : yellow;
 }
 .contact h2{
     margin : 15px;
     color:black;
     font-weight: bold;
-    font-family: 'Segoi UI', Tahoma, sans-serif;
+    font-family: 'Segoi UI', Tahoma, Poppins;
     font-size: 35px;
 }
 .contact p{
@@ -241,6 +268,7 @@ label[for="humberger"] {
     padding: 18px 10px;
     text-align: center;
     align-items: center;
+    text-decoration: none;
     
 }
 .fab:hover{
@@ -338,6 +366,8 @@ label[for="humberger"] {
     align-items: center;
     justify-content: center;
     padding: 80px 20px;
+    transition: all 0.4 ease ;
+    
     
 }
 .blog h5{
@@ -365,6 +395,7 @@ label[for="humberger"] {
     text-align: center;
     align-items: center;
     justify-content: center;
+    
 }
 .containerblog a{
     color: var(--purple);
@@ -380,22 +411,31 @@ label[for="humberger"] {
     padding: 10px;
     font-weight: bold;
     color: #595977bb;
+    text-align: justify;
+    padding: 10px 25px;
 }
 .containerblog button{
     background-color: var(--purple);
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 20px;
-    font-size: 20px;
-    font: 'Sogoe UI', Tahoma, sans-serif;
+    font-size: 15px;
+    font: 'Sogoe UI', Tahoma, Poppins;
     color: white;
     text-decoration: none;
     border: none;
     font-weight: bold;
     padding: 15px 25px;
+    margin: 20px;
+    position: relative;
+    right: 80px;
+    bottom: 10px;
+    transition: all 0.4s ease;
+
     
 }
 .containerblog button:hover{
     background-color: var(--peach);
+    transform: scale(1.1);
 }
 #contact{
     background-color: whitesmoke;
@@ -476,271 +516,191 @@ label[for="humberger"] {
     padding-bottom: 0;
     margin: 0;
     justify-content: space-between;
+    gap: 20px;
 }
 .footer p{
     padding-top: 0;
     margin: 0;
     color: white;
+    position: relative;
+    bottom:70px;
 }
 .footer p a{
     text-decoration: none;
     color : var(--purple);
 }
-@media screen and (min-width: 768px) {
-    .panel {
-        display: block; 
-         color: white;
-       padding: 80px 10%;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        height: auto; 
-        top: 0;
-        position: sticky;
-        box-sizing: border-box;
-        overflow: visible;
-        padding-bottom: 15vh;
-    
-    }
-    .beranda{
-        background-color: white;
-    ,}
-    #project{
-        background-color: white;
-        z-index: 2;
-    }
-    .beranda {
-        position: relative; 
-        min-height: 100vh;
-        z-index: 1;
-    }
-    #pendidikan{
-    position: relative;
-        z-index: 3;
-    }
-    .nav-flex{
-        z-index: 100;
-    }
-    .blogg{
-        z-index: 4;
-    }
-    .contact1{
-        z-index: 5;
-    }
-    .footer{
-        z-index: 6;
+@media screen and (min-width: 768px){
+    html {
+    scroll-behavior: smooth;
     }
 
-    /* Section kedua (Project) yang akan "menimpa" ke atas */
-    .project {
-        position: sticky;
-        top: 0;
-        min-height: 100vh;
-        z-index: 2;
-        /* Tambahkan bayangan agar terlihat jelas saat menimpa */
-        box-shadow: 0 -20px 30px rgba(0,0,0,0.1);
-    }
-    .panel{
+    .panel {
+    display: block; 
+    color: white;
+    padding: 80px 10%;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: auto; 
+    top: 0;
+    position: sticky;
+    box-sizing: border-box;
+    overflow: visible;
+    padding-bottom: 15vh;
     padding-top: 100px;  /* Jarak dari atas */
-    padding-bottom: 50px; /* Jarak sebelum panel berikutnya menimpa
+    /* padding-bottom: 50px; Jarak sebelum panel berikutnya menimpa - (Catatan: properti ini digabung dengan padding-bottom 15vh di atas agar tidak bentrok) */
+}
+
+    .beranda {
+    background-color: white;
+    position: relative; 
+    min-height: 100vh;
+    z-index: 1;
     }
+    .fab{
+        font-size: 70px;
+    }
+
+    #project {
+    background-color: white;
+    z-index: 2;
+    }
+
     #pendidikan {
+    position: relative;
+    z-index: 3;
+    box-shadow: 40px 40px 30px rgba(0,0,0,0.1);
     background-color: var(--navy);
     padding: 80px;
     text-align: center;
-    align-items: center;
+    align-items: center;    
     
+    }    
+
+    .blogg {
+    z-index: 4;
+    position: relative;
     }
-    .pendidikan h5{
+
+    .contact1 {
+    z-index: 5;
+    position: relative;
+    }
+
+    .footer {
+    z-index: 6;
+    position: relative;
+    }
+
+/* Section kedua (Project) yang akan "menimpa" ke atas */
+    .project {
+    position: sticky;
+    top: 0;
+    min-height: 100vh;
+    z-index: 2;
+    /* Tambahkan bayangan agar terlihat jelas saat menimpa */
+    box-shadow: 0 -20px 30px rgba(0,0,0,0.1);
+    }
+
+    .name {
+    font-weight: bold;
+    color: black;
+    font-size: 35px;
+    margin: 0px 10px;
+    }
+
+    .pendidikan h5 {
     color: var(--purple);
     font-weight: bold;
     font-size: 20px;
     margin-bottom: 0px;
     }
-    .pendidikan h2{
+
+    .pendidikan h2 {
     font-weight: bolder;
     font-size: 30px;
     margin-top: 0px;
     color: white;
     }
-    .pendidikan p{
+
+    .pendidikan p {
     color: #688fb3;
     font-weight: bold;
-    
     }
-    .pendidikan a{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    }
-    .pendidikan img{
+
+    .pendidikan img {
     width: 200px;
     margin-bottom: 50px;
     cursor: pointer;
     filter: grayscale(100%);
     transition: filter 0.4s ease, transform 0.4s ease, opacity 0.4s ease;
-    opacity: 0,6;
+    opacity: 0.6; /* Diperbaiki dari 0,6 menjadi 0.6 (menggunakan titik) */
     z-index: 3;
-    
-    
     }
-    .pendidikan img:hover{
+
+    .pendidikan img:hover {
     filter: grayscale(0);
     transform: scale(1.1);
     opacity: 1;
-    
     }
-    #blog{
+
+    #blog {
     background-color: white;
     text-align: center;
     align-items: center;
     justify-content: center;
-    padding-top:80px;
-    
-    
+    padding-top: 80px;
     }
-    .blog h5{
+    .blog h5 {
     margin-bottom: 0px;
     color: var(--purple);
     font-weight: bold;
     font-size: 15px;
     }
-    .blog h2{
+
+    .blog h2 {
     margin-top: 0px;
     color: black;
     font-weight: bolder;
     font-size: 30px;
     }
-    .blog p{
+
+    .blog p {
     font-weight: bold;
     color: #acacacd6;
     margin-bottom: 80px;
     }
+    .containerblog a button{
+        position: relative;
+        top: 150px;
+        left: 6px;
+        font-size: 25px;
+    }
+
     .containerblog {
     border-radius: 10px;
     padding: 0;
-    box-shadow: 0 8px 20px rgba(110, 142, 251, 0.4);
-    margin: 0;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+    box-shadow: 0 8;
+    padding-bottom: 180px;
+    margin: 0 150px;
     }
-    .containerblog a{
-    color: var(--purple);
-    text-decoration: none;
+    .about p {
+        font-size: 40px;
+        color: black;
     }
-    .containerblog img{
-    width: 100%;
-    display: block;
-    margin: 0;
-    border-radius: 10px 10px 0 0;
+    .about h2{
+        font-size: 65px;
+        color: black;
     }
-    .containerblog p{
-    padding: 10px;
-    font-weight: bold;
-    color: #595977bb;
+    .about h4{
+        font-size: 35px;
+        
     }
-    .containerblog button{
-    background-color: var(--purple);
-    border-radius: 5px;
-    margin-bottom: 20px;
-    font-size: 20px;
-    font: 'Sogoe UI', Tahoma,     sans-serif;
-    color: white;
-    text-decoration: none;
-    border: none;
-    font-weight: bold;
-    padding: 15px 25px;
-    
+    .contact h2{
+        font-size: 80px;
+        padding-top: 100px;
     }
-    .containerblog button:hover{
-    background-color: var(--peach);
+    .contact p{
+        font-size: 40px;
     }
-    #contact{
-    background-color: whitesmoke;
-    text-align: center;
-    align-items: center;
-    padding: 0;    
-    }
-    #contact h5{
-    color: var(--purple);
-    margin-bottom: 0;
-    font-size: 18px;
-    font-weight: bold;
-    }
-    #contact h2{
-    color: black;
-    margin-top: 0;
-    font-size: 36px;
-    font-weight: bold;
-    }
-    .last{
-        padding: 0;
-        width: 100%;
-    }
-    .last h1{
-    text-align: left;
-    color: white;
-    font-family: 'Sogoe Ui', Tahoma, sans-serif;
-    font-size: 70px;
-    margin-right: 150px;
-    font-weight: bolder;
-    margin-left: 50px;
-    
-    }
-    .last h2{
-    text-align: left;
-    font-size: 2px;
-   
 }
-.last h4{
-    text-align: left;
-    color: white;
-    font-size: 20px;
-    margin-bottom: 0;
-}
-.last ul{
-    text-align: left;
-    text-decoration: none;
-    list-style-type: none;
-    padding-left: 0;
-    margin-top: 0;
-    
-    
-}
-.last ul li a{
-    color: #ccd6f5;
-    text-decoration: none;
-}
-.footer{
-    background-color: #112b44;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    
-    
-   
-} 
-.footer a i{
-     color: white;
-     
-}
-.footer a{
-    text-decoration: none;
-    padding-bottom: 0;
-    margin: 0;
-    justify-content: space-between;
-}
-.footer p{
-    padding-top: 0;
-    margin: 0;
-    color: white;
-}
-.footer p a{
-    text-decoration: none;
-    color : var(--purple);
-}
-}
- 
